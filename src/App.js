@@ -3,6 +3,8 @@ import { getBalance, readCount, setCount } from "./api/UseCaver";
 import "./App.css";
 import React, { useState } from "react";
 import { queryByDisplayValue } from "@testing-library/react";
+import QRCode from "qrcode.react";
+import * as KlipAPI from "./api/UseKlip";
 
 // 2021 0616 시작
 // 1 Smart contract 배포 주소 파악 ( 가져오기 )
@@ -14,18 +16,19 @@ function onPressButton() {
 function onPressButton2(_balance, _setBalance) {
   _setBalance(_balance);
 }
+const DEFAULT_QR_CODE = "DEFAULT";
 function App() {
   const [balance, setBalance] = useState("0");
+  const [qrvalue, setQrvalue] = useState(DEFAULT_QR_CODE);
   //readCount();
   // getBalance("0xf8f540fd7840d0e59c31092686a09de06b5136dd");
   const onClickGetAddress = () => {
     // clip
+    KlipAPI.getAddress(setQrvalue);
   };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
         <button
           onClick={() => {
             onPressButton2("15", setBalance);
@@ -34,6 +37,8 @@ function App() {
         >
           주소 가져오기
         </button>
+        <br></br>
+        <QRCode value={qrvalue} />
         <p>{balance}</p>
         <a
           className="App-link"
