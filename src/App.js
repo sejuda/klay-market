@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+//0707 test
 import QRCode from "qrcode.react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faWallet, faPlus } from "@fortawesome/free-solid-svg-icons";
