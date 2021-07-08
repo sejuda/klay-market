@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//0707 test
 import QRCode from "qrcode.react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faWallet, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +19,8 @@ import {
   Col,
 } from "react-bootstrap";
 import { MARKET_CONTRACT_ADDRESS } from "./constants";
+//0707 test
+//0708 test
 
 function onPressButton(balance) {
   console.log("hi");
