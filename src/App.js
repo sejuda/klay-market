@@ -37,6 +37,7 @@ import { MARKET_CONTRACT_ADDRESS } from "./constants";
 //0726 test
 //0727 test
 //0728 test
+//0730 test
 function onPressButton(balance) {
   console.log("hi");
 }
